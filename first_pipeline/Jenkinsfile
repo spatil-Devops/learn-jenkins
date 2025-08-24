@@ -18,10 +18,7 @@ pipeline{
             echo "${JOB_NAME}"
             sh """whoami
                   ls /var/jenkins_home/workspace/${JOB_NAME}"""
-            cleanWs(
-            deleteDirs: true,
-            disableDeferredWipeout: true,
-            )
+            cleanWs()
             sh "ls /var/jenkins_home/workspace/${JOB_NAME}"
         }
     }
