@@ -22,7 +22,12 @@ pipeline{
                 echo "myString value: ${myString}"
                 echo "mynumber value: ${myNumber}"
                 echo "mybool value: ${myBool}"
+                myFunc("Hello World!")
             }
         }
    }
+}
+
+def myFunc(string myText){
+    echo "My text is : ${myText}"
 }
