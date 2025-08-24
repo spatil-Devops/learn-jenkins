@@ -14,7 +14,9 @@ pipeline{
     }
     post {
         always{
-            sh "ls /var/jenkins_home/workspace"
+
+            sh """whoami
+                  ls /var/jenkins_home/workspace"""
             cleanWs(
             deleteDirs: true,
             disableDeferredWipeout: true,
