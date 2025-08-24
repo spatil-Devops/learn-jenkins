@@ -1,0 +1,18 @@
+pipeline{
+    agent any
+    stages{
+        stage("Clean Dir"){
+            steps{
+                deleteDir()
+            }
+        }
+        stage("stage 1"){
+            steps{
+                echo "This is stage 1"
+            }
+        }
+    }
+    post{
+        cleanWs()
+    }
+}
