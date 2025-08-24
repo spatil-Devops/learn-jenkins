@@ -14,7 +14,7 @@ pipeline{
     }
     post {
         always{
-
+            echo "${JOB_NAME}"
             sh """whoami
                   ls /var/jenkins_home/workspace"""
             cleanWs(
