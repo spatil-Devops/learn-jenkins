@@ -10,6 +10,7 @@ pipeline{
    stages{
         stage("Demo"){
             steps{
+                echo "Build Number: ${BUILD_NUMBER}"
                 echo "myString value: ${myString}"
                 echo "mynumber value: ${myNumber}"
                 echo "mybool value: ${myBool}"
