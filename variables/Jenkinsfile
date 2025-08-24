@@ -25,6 +25,12 @@ pipeline{
                 myFunc("Hello World!")
             }
         }
+
+        stage("Another job"){
+            steps{
+                build 'parameterized_pipeline'
+            }
+        }
    }
 }
 
