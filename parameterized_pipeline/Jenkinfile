@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    parameters{
+        booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: 'Debug_Build')
+    }
+    stages{
+        stage("Clean Dir"){
+            steps{
+                deleteDir()
+            }
+        }
+        stage("stage 1"){
+            steps{
+                echo "Debug Build: ${params.DEBUG_BUILD}"
+            }
+        }
+    }
+    post {
+        always{
+            cleanWs()
+        }
+    }
+}
