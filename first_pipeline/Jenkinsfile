@@ -14,10 +14,12 @@ pipeline{
     }
     post {
         always{
+            sh "ls"
             cleanWs(
             deleteDirs: true,
             disableDeferredWipeout: true,
             )
+            sh "ls"
         }
     }
 }
