@@ -28,7 +28,7 @@ pipeline{
 
         stage("Another job"){
             steps{
-                build 'parameterized_pipeline'
+                build 'parameterized_Pipeline'
             }
         }
    }
