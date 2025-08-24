@@ -2,6 +2,14 @@ pipeline{
     agent any
     parameters{
         booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: 'Debug_Build')
+
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
     stages{
         stage("Clean Dir"){
@@ -12,6 +20,10 @@ pipeline{
         stage("stage 1"){
             steps{
                 echo "Debug Build: ${params.DEBUG_BUILD}"
+                echo "Hello: ${params.PERSON}"
+                echo "BIOGRAPHY: ${params.BIOGRAPHY}"
+                echo "Choices: ${params.CHOICE}"
+                echo "PASSWORD: ${params.PASSWORD}"
             }
         }
     }
