@@ -28,7 +28,7 @@ pipeline{
 
         stage("Another job"){
             steps{
-                build 'parameterized_Pipeline'
+                build job: 'parameterized_Pipeline', parameters: [[$class:BooleanParameterValue, name:'DEBUG_BUILD', value:False]]
             }
         }
    }
