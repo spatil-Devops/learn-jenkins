@@ -16,12 +16,12 @@ pipeline{
         always{
             echo "${JOB_NAME}"
             sh """whoami
-                  ls /var/jenkins_home/workspace"""
+                  ls /var/jenkins_home/workspace/${JOB_NAME}"""
             cleanWs(
             deleteDirs: true,
             disableDeferredWipeout: true,
             )
-            sh "ls /var/jenkins_home/workspace"
+            sh "ls /var/jenkins_home/workspace/${JOB_NAME}"
         }
     }
 }
