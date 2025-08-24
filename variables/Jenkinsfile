@@ -28,6 +28,6 @@ pipeline{
    }
 }
 
-def myFunc(string myText){
+def myFunc(String myText){
     echo "My text is : ${myText}"
 }
