@@ -10,6 +10,14 @@ pipeline{
    stages{
         stage("Demo"){
             steps{
+                script {
+                    if(myBool) {
+                        echo "Yes"
+                    }
+                    else{
+                        echo "No"
+                    }
+                }
                 echo "Build Number: ${env.BUILD_NUMBER}"
                 echo "myString value: ${myString}"
                 echo "mynumber value: ${myNumber}"
